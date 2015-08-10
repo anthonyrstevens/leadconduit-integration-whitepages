@@ -1,0 +1,35 @@
+{
+  "name": "leadconduit-whitepages",
+  "description": "LeadConduit integration with WhitePages",
+  "author": "Anthony Stevens <anthonys@crowdify.com>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "licenses": [
+    {
+      "type": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International",
+      "url": "http://creativecommons.org/licenses/by-nc-nd/4.0/legalcode"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whitepages/leadconduit-integration-whitepages.git"
+  },
+  "engines": {
+    "node": ">=0.8.1"
+  },
+  "scripts": {
+    "test": "cake test",
+    "prepublish": "cake build"
+  },
+  "dependencies": {
+    "moment": "^2.7.0",
+    "timekeeper": "0.0.4",
+    "underscore.string": "^2.3.3"
+  },
+  "devDependencies": {
+    "chai": ">= 1.9.0",
+    "coffee-script": ">= 1.7.0",
+    "leadconduit-fields": "^1.2.3",
+    "mocha": ">= 1.17.0"
+  }
+}
