@@ -16,8 +16,7 @@ describe 'Phone Request', ->
     assert.equal 'GET', @request.method
 
 describe 'Phone Response', ->
-  # success is defined as a non-partial transaction with the subscriber status of 'Active'
-  # and with a phone_type_code not equal to 6, 7, 8, 9, 11, or 20
+  
   it 'should parse JSON body and return success when criteria matches', ->
     vars = {}
     req = {}
