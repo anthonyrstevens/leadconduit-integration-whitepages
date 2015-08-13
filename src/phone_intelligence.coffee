@@ -43,7 +43,7 @@ response = (vars, req, res) ->
         message = message_obj.message.replace /qiWithPhone: /, ""
         code = message_obj.code
 
-        if severity == "warning"
+        if severity == 'warning'
           result = { outcome: 'failure', error: "#{message}", reason: "#{message}", billable: 1 }
         else
           # error
@@ -51,8 +51,6 @@ response = (vars, req, res) ->
 
       else
         primary_key = event.results[0]
-        # console.log 'Primary key is ' + primary_key
-
         phone_obj = event.dictionary[primary_key]
         phone_number = phone_obj.phone_number
         is_valid = phone_obj.is_valid
