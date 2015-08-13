@@ -1,19 +1,13 @@
 assert = require('chai').assert
 fields = require('leadconduit-fields')
 integration = require('../src/phone_intelligence')
-time = require('timekeeper')
-
 
 describe 'Phone Request', ->
 
   beforeEach ->
-    time.freeze(new Date('Thu, 31 Jul 2015 17:45:32 +0000'))
     process.env.WHITEPAGES_API_KEY = 'AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE'
     @vars = lead: { phone_1: '7732658399' }
     @request = integration.request(@vars)
-
-  afterEach ->
-    time.reset()
 
   it 'should have url', ->
     assert.equal @request.url, 'https://proapi.whitepages.com/2.0/phone.json?api_key=AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE&phone_number=7732658399'
