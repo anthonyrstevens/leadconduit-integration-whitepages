@@ -35,7 +35,7 @@ response = (vars, req, res) ->
   if res.status == 200
     event = JSON.parse(res.body)
     if event.error 
-      result = { outcome: 'error', error: "#{event.error.message}", reason: "#{event.error.message}", billable: 1 }
+      result = { outcome: 'error', reason: "#{event.error.message}", billable: 1 }
     else
       if event.messages and event.messages.length
         message_obj = event.messages[0]
@@ -44,7 +44,7 @@ response = (vars, req, res) ->
         code = message_obj.code
 
         if severity == 'warning'
-          result = { outcome: 'failure', error: "#{message}", reason: "#{message}", billable: 1 }
+          result = { outcome: 'failure', reason: "#{message}", billable: 1 }
         else
           # error
           result = { outcome: 'error', reason: "#{message}", billable: 0 }
@@ -67,7 +67,6 @@ response = (vars, req, res) ->
 
         result.outcome = 'success'
         result.reason = null
-        result.error = null
         result.billable = 1
         result.phone_number = phone_number
         result.country_code = country_code
@@ -107,7 +106,6 @@ response.variables = ->
     { name: 'live.is_prepaid', type: 'boolean', description: 'Whitepages Pro Is Prepaid' }
     { name: 'live.do_not_call', type: 'boolean', description: 'Whitepages Pro Do Not Call Registered' }
     { name: 'live.reputation.level', type: 'number', description: 'Whitepages Pro Reputation Level' }
-    { name: 'live.error', type: 'string', description: 'Whitepages Pro Error Response' }
   ]
 
 

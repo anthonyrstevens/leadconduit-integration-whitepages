@@ -272,7 +272,6 @@ describe 'Phone Response', ->
       live:
         outcome: 'success'
         reason: null
-        error: null
         billable: 1
         phone_number: '2064098427'
         country_code: 'US'
@@ -352,7 +351,6 @@ describe 'Phone Response', ->
         outcome: 'failure'
         billable: 1
         reason: 'invalid area code'
-        error: 'invalid area code'
         
     response = integration.response(vars, req, res)
     assert.deepEqual response, expected
@@ -420,8 +418,7 @@ describe 'Phone Response', ->
         outcome: 'failure'
         reason: 'missing area code'
         billable: 1
-        error: 'missing area code'
-
+        
     response = integration.response(vars, req, res)
     assert.deepEqual response, expected
 
