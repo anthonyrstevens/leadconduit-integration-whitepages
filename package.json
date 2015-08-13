@@ -2,7 +2,7 @@
   "name": "leadconduit-whitepages",
   "description": "LeadConduit integration with WhitePages",
   "author": "Anthony Stevens <anthonys@crowdify.com>",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "main": "index.js",
   "licenses": [
     {
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "moment": "^2.7.0",
-    "timekeeper": "0.0.4",
     "underscore.string": "^2.3.3"
   },
   "devDependencies": {
