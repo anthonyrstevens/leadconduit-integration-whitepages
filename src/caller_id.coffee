@@ -51,28 +51,12 @@ response = (vars, req, res) ->
 
       else
         primary_key = event.results[0]
-        # console.log 'Primary key is ' + primary_key
-
+        
         phone_obj = event.dictionary[primary_key]
-        phone_number = phone_obj.phone_number
-        is_valid = phone_obj.is_valid
-        is_connected = phone_obj.is_connected
-        line_type = phone_obj.line_type
-        carrier = phone_obj.carrier
-        is_prepaid = phone_obj.is_prepaid
-        reputation_level = phone_obj.reputation.level
-
+        
         best_location_key = phone_obj.best_location.id.key
         location_obj = event.dictionary[best_location_key]
-        address = location_obj.address
-        city = location_obj.city
-        state = location_obj.state_code
-        postal_code = location_obj.postal_code
-        lat_long = location_obj.lat_long
-        delivery_point = location_obj.delivery_point
-        is_receiving_mail = location_obj.is_receiving_mail
-        country_code = location_obj.country_code
-
+        
         # the "belongs to" entity could be a Person, or a Business
         belongs_to_key = phone_obj?.belongs_to?[0].id.key
         belongs_to_obj = event.dictionary[belongs_to_key]
@@ -82,31 +66,30 @@ response = (vars, req, res) ->
 
         result.outcome = 'success'
         result.reason = null
-        result.billable = 1
-        result.phone_number = phone_number
-        result.country_code = country_code
-        result.reputation = { level: reputation_level }
-        result.is_connected = is_connected
-        result.is_prepaid = is_prepaid
-        result.is_valid = is_valid
-        result.carrier = carrier
-        result.line_type = line_type
+        result.billable = phone_obj.phone_number
+        result.country_code = location_obj.country_code
+        result.reputation_level = phone_obj.reputation.level
+        result.is_connected = phone_obj.is_connected
+        result.is_prepaid = phone_obj.is_prepaid
+        result.is_valid = phone_obj.is_valid
+        result.carrier = phone_obj.carrier
+        result.line_type = phone_obj.line_type
         result.belongs_to = {
           name: name
           gender: gender
           age_range: age_range
         }
         result.belongs_to.location = {
-          address: address
-          city: city
-          state: state
-          postal_code: postal_code
-          delivery_point: delivery_point
-          is_receiving_mail: is_receiving_mail
+          address: location_obj.address
+          city: location_obj.city
+          state: location_obj.state_code
+          postal_code: location_obj.postal_code
+          delivery_point: location_obj.delivery_point
+          is_receiving_mail: location_obj.is_receiving_mail
         }
         result.belongs_to.location.lat_long = {
-          latitude: lat_long.latitude
-          longitude: lat_long.longitude
+          latitude: location_obj.lat_long.latitude
+          longitude: location_obj.lat_long.longitude
         }
   else
     # capture the error body, if we have one
