@@ -40,10 +40,10 @@ response = (vars, req, res) ->
       if event.messages and event.messages.length
         message_obj = event.messages[0]
         severity = message_obj.severity
-        message = message_obj.message.replace /qiWithPhone: /, ""
+        message = message_obj.message.replace /qiWithPhone: /, ''
         code = message_obj.code
 
-        if severity == "warning"
+        if severity == 'warning'
           result = { outcome: 'failure', error: "#{message}", reason: "#{message}", billable: 1 }
         else
           # error
