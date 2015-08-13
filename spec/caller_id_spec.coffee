@@ -176,34 +176,34 @@ describe 'Caller ID Response', ->
 }'
     expected =
       live:
-        outcome: "success"
+        outcome: 'success'
         reason: null
         error: null
         billable: 1
-        phone_number: "2064098427"
-        country_code: "US"
+        phone_number: '2064098427'
+        country_code: 'US'
         reputation:
           level: 1
         is_connected: true
         is_valid: true
         is_prepaid: null
-        carrier: "AT&T"
-        line_type: "Mobile"
+        carrier: 'AT&T'
+        line_type: 'Mobile'
         belongs_to:
-          name: "Anthony R Stevens"
-          gender: "Male"
+          name: 'Anthony R Stevens'
+          gender: 'Male'
           age_range:
             start: 40
             end: 44
           location:
-            address: "3430 36th Ave W, Seattle WA 98199-1902"
-            city: "Seattle"
-            state: "WA"
-            postal_code: "98199"
+            address: '3430 36th Ave W, Seattle WA 98199-1902'
+            city: 'Seattle'
+            state: 'WA'
+            postal_code: '98199'
             lat_long:
               latitude: 47.651402
               longitude: -122.403214
-            delivery_point: "SingleUnit"
+            delivery_point: 'SingleUnit'
             is_receiving_mail: true
 
     response = integration.response(vars, req, res)
@@ -346,28 +346,28 @@ describe 'Caller ID Response', ->
 }'
     expected =
       live:
-        outcome: "success"
+        outcome: 'success'
         reason: null
         error: null
         billable: 1
-        phone_number: "2069735100"
-        country_code: "US"
+        phone_number: '2069735100'
+        country_code: 'US'
         reputation:
           level: 1
         is_connected: true
         is_valid: true
         is_prepaid: false
-        carrier: "tw telecom"
-        line_type: "Landline"
+        carrier: 'tw telecom'
+        line_type: 'Landline'
         belongs_to:
-          name: "Whitepages"
+          name: 'Whitepages'
           age_range: null
           gender: null
           location:
-            address: "1301 5th Ave, Seattle, WA 98101-2603"
-            city: "Seattle"
-            state: "WA"
-            postal_code: "98101"
+            address: '1301 5th Ave, Seattle, WA 98101-2603'
+            city: 'Seattle'
+            state: 'WA'
+            postal_code: '98101'
             lat_long:
               latitude: 47.608624
               longitude: -122.334442
@@ -438,7 +438,7 @@ describe 'Caller ID Response', ->
 }'
     expected =
       live:
-        outcome: "failure"
+        outcome: 'failure'
         billable: 1
         reason: 'invalid area code'
         error: 'invalid area code'
@@ -506,7 +506,7 @@ describe 'Caller ID Response', ->
 }'
     expected =
       live:
-        outcome: "failure"
+        outcome: 'failure'
         reason: 'missing area code'
         billable: 1
         error: 'missing area code'
@@ -524,9 +524,9 @@ describe 'Caller ID Response', ->
       body: '{"error":{"message":"Invalid Resource URI"}}'
     expected =
       live:
-        outcome: "error"
+        outcome: 'error'
         billable: 0
-        reason: "WhitePages error: Invalid Resource URI"
+        reason: 'WhitePages error: Invalid Resource URI'
 
     response = integration.response(vars, req, res)
     assert.deepEqual response, expected
