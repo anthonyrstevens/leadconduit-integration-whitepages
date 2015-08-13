@@ -9,15 +9,7 @@ baseUrl = 'https://proapi.whitepages.com/2.0/phone.json'
 
 request = (vars) ->
 
-  # Use the API key and Customer ID specified as an environment variables.
-  # Assign the values to vars so that we can mask them. This works because the request function is
-  # called twice: first to generate the real request, and second to generate the masked request.
-  # On the second invocation, the vars properties are already assigned as masked strings.
-  # console.log "process.env.WHITEPAGES_API_KEY: #{process.env.WHITEPAGES_API_KEY}"
-
-  vars.api_key ?= process.env.WHITEPAGES_API_KEY ? vars.whitepages.api_key
-
-  url: "#{baseUrl}?api_key=#{vars.api_key}&phone_number=#{vars.lead.phone_1}&response_type=callerid",
+  url: "#{baseUrl}?api_key=#{process.env.WHITEPAGES_API_KEY}&phone_number=#{vars.lead.phone_1}&response_type=callerid",
   method: 'GET',
   headers:
     Accepts: 'application/json'
