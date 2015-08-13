@@ -270,20 +270,20 @@ describe 'Phone Response', ->
 }'
     expected =
       live:
-        outcome: "success"
+        outcome: 'success'
         reason: null
         error: null
         billable: 1
-        phone_number: "2064098427"
-        country_code: "US"
+        phone_number: '2064098427'
+        country_code: 'US'
         reputation:
           level: 1
         is_connected: true
         is_valid: true
         do_not_call: true
         is_prepaid: null
-        carrier: "AT&T"
-        line_type: "Mobile"
+        carrier: 'AT&T'
+        line_type: 'Mobile'
 
     response = integration.response(vars, req, res)
     assert.deepEqual response, expected
@@ -349,7 +349,7 @@ describe 'Phone Response', ->
 }'
     expected =
       live:
-        outcome: "failure"
+        outcome: 'failure'
         billable: 1
         reason: 'invalid area code'
         error: 'invalid area code'
@@ -417,7 +417,7 @@ describe 'Phone Response', ->
 }'
     expected =
       live:
-        outcome: "failure"
+        outcome: 'failure'
         reason: 'missing area code'
         billable: 1
         error: 'missing area code'
@@ -435,9 +435,9 @@ describe 'Phone Response', ->
       body: '{"error":{"message":"Invalid Resource URI"}}'
     expected =
       live:
-        outcome: "error"
+        outcome: 'error'
         billable: 0
-        reason: "WhitePages error: Invalid Resource URI"
+        reason: 'WhitePages error: Invalid Resource URI'
 
     response = integration.response(vars, req, res)
     assert.deepEqual response, expected
