@@ -1,5 +1,7 @@
 module.exports = {
   outbound: {
-    phone: require('./lib/phone')
+  	phone_intelligence: require('./lib/phone_intelligence'),
+	caller_id: require('./lib/caller_id')
+
   }
 };
