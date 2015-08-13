@@ -52,31 +52,22 @@ response = (vars, req, res) ->
       else
         primary_key = event.results[0]
         phone_obj = event.dictionary[primary_key]
-        phone_number = phone_obj.phone_number
-        is_valid = phone_obj.is_valid
-        is_connected = phone_obj.is_connected
-        line_type = phone_obj.line_type
-        carrier = phone_obj.carrier
-        is_prepaid = phone_obj.is_prepaid
-        do_not_call = phone_obj.do_not_call 
-        reputation_level = phone_obj.reputation.level
-
+        
         best_location_key = phone_obj.best_location.id.key
         location_obj = event.dictionary[best_location_key]
-        country_code = location_obj.country_code
-
+        
         result.outcome = 'success'
         result.reason = null
         result.billable = 1
-        result.phone_number = phone_number
-        result.country_code = country_code
-        result.reputation = { level: reputation_level }
-        result.is_connected = is_connected
-        result.is_prepaid = is_prepaid
-        result.do_not_call = do_not_call
-        result.is_valid = is_valid
-        result.carrier = carrier
-        result.line_type = line_type
+        result.phone_number = phone_obj.phone_number
+        result.country_code = location_obj.country_code
+        result.reputation_level = phone_obj.reputation.level
+        result.is_connected = phone_obj.is_connected
+        result.is_prepaid = phone_obj.is_prepaid
+        result.do_not_call = phone_obj.do_not_call
+        result.is_valid = phone_obj.is_valid
+        result.carrier = phone_obj.carrier
+        result.line_type = phone_obj.line_type
 
 
       # put rest of stuff here
