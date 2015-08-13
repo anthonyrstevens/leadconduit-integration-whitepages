@@ -102,20 +102,20 @@ response = (vars, req, res) ->
 
     result = { outcome: 'error', reason: "WhitePages error: #{message}", billable: 0 }
 
-  live: result
+  caller_id: result
   
 response.variables = ->
   [
-    { name: 'live.outcome', type: 'string', description: 'Integration outcome (success, failure, or error)' }
-    { name: 'live.reason', type: 'string', description: 'If integration fails, this is the reason why' }
-    { name: 'live.phone_number', type: 'string', description: 'Whitepages Pro Phone Number' }
-    { name: 'live.is_valid', type: 'boolean', description: 'Whitepages Pro Is Valid' }
-    { name: 'live.is_connected', type: 'boolean', description: 'Whitepages Pro Is Connected' }
-    { name: 'live.country_code', type: 'string', description: 'Whitepages Pro Country Code' }
-    { name: 'live.line_type', type: 'string', description: 'Whitepages Pro Line Type' }
-    { name: 'live.carrier', type: 'string', description: 'Whitepages Pro Carrier' }
-    { name: 'live.is_prepaid', type: 'boolean', description: 'Whitepages Pro Is Prepaid' }
-    { name: 'live.reputation.level', type: 'number', description: 'Whitepages Pro Reputation Level' }
+    { name: 'caller_id.outcome', type: 'string', description: 'Integration outcome (success, failure, or error)' }
+    { name: 'caller_id.reason', type: 'string', description: 'If integration fails, this is the reason why' }
+    { name: 'caller_id.phone_number', type: 'string', description: 'Whitepages Pro Phone Number' }
+    { name: 'caller_id.is_valid', type: 'boolean', description: 'Whitepages Pro Is Valid' }
+    { name: 'caller_id.is_connected', type: 'boolean', description: 'Whitepages Pro Is Connected' }
+    { name: 'caller_id.country_code', type: 'string', description: 'Whitepages Pro Country Code' }
+    { name: 'caller_id.line_type', type: 'string', description: 'Whitepages Pro Line Type' }
+    { name: 'caller_id.carrier', type: 'string', description: 'Whitepages Pro Carrier' }
+    { name: 'caller_id.is_prepaid', type: 'boolean', description: 'Whitepages Pro Is Prepaid' }
+    { name: 'caller_id.reputation.level', type: 'number', description: 'Whitepages Pro Reputation Level' }
   ]
 
 

@@ -269,7 +269,7 @@ describe 'Phone Response', ->
  "messages":[]
 }'
     expected =
-      live:
+      phone_intelligence:
         outcome: 'success'
         reason: null
         billable: 1
@@ -347,7 +347,7 @@ describe 'Phone Response', ->
  ]
 }'
     expected =
-      live:
+      phone_intelligence:
         outcome: 'failure'
         billable: 1
         reason: 'invalid area code'
@@ -414,7 +414,7 @@ describe 'Phone Response', ->
  ]
 }'
     expected =
-      live:
+      phone_intelligence:
         outcome: 'failure'
         reason: 'missing area code'
         billable: 1
@@ -431,7 +431,7 @@ describe 'Phone Response', ->
         'Content-Type': 'application/json'
       body: '{"error":{"message":"Invalid Resource URI"}}'
     expected =
-      live:
+      phone_intelligence:
         outcome: 'error'
         billable: 0
         reason: 'WhitePages error: Invalid Resource URI'
@@ -448,7 +448,7 @@ describe 'Phone Response', ->
         'Content-Type': 'application/json'
       body: '{"error":{"message":"Some Error"}}'
     expected =
-      live:
+      phone_intelligence:
         outcome: 'error'
         billable: 0
         reason: 'WhitePages error: Some Error'

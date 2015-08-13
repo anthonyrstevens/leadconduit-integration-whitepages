@@ -82,21 +82,21 @@ response = (vars, req, res) ->
 
     result = { outcome: 'error', reason: "WhitePages error: #{message}", billable: 0 }
 
-  live: result
+  phone_intelligence: result
   
 response.variables = ->
   [
-    { name: 'live.outcome', type: 'string', description: 'Integration outcome (success, failure, or error)' }
-    { name: 'live.reason', type: 'string', description: 'If integration fails, this is the reason why' }
-    { name: 'live.phone_number', type: 'string', description: 'Whitepages Pro Phone Number' }
-    { name: 'live.is_valid', type: 'boolean', description: 'Whitepages Pro Is Valid' }
-    { name: 'live.is_connected', type: 'boolean', description: 'Whitepages Pro Is Connected' }
-    { name: 'live.country_code', type: 'string', description: 'Whitepages Pro Country Code' }
-    { name: 'live.line_type', type: 'string', description: 'Whitepages Pro Line Type' }
-    { name: 'live.carrier', type: 'string', description: 'Whitepages Pro Carrier' }
-    { name: 'live.is_prepaid', type: 'boolean', description: 'Whitepages Pro Is Prepaid' }
-    { name: 'live.do_not_call', type: 'boolean', description: 'Whitepages Pro Do Not Call Registered' }
-    { name: 'live.reputation.level', type: 'number', description: 'Whitepages Pro Reputation Level' }
+    { name: 'phone_intelligence.outcome', type: 'string', description: 'Integration outcome (success, failure, or error)' }
+    { name: 'phone_intelligence.reason', type: 'string', description: 'If integration fails, this is the reason why' }
+    { name: 'phone_intelligence.phone_number', type: 'string', description: 'Whitepages Pro Phone Number' }
+    { name: 'phone_intelligence.is_valid', type: 'boolean', description: 'Whitepages Pro Is Valid' }
+    { name: 'phone_intelligence.is_connected', type: 'boolean', description: 'Whitepages Pro Is Connected' }
+    { name: 'phone_intelligence.country_code', type: 'string', description: 'Whitepages Pro Country Code' }
+    { name: 'phone_intelligence.line_type', type: 'string', description: 'Whitepages Pro Line Type' }
+    { name: 'phone_intelligence.carrier', type: 'string', description: 'Whitepages Pro Carrier' }
+    { name: 'phone_intelligence.is_prepaid', type: 'boolean', description: 'Whitepages Pro Is Prepaid' }
+    { name: 'phone_intelligence.do_not_call', type: 'boolean', description: 'Whitepages Pro Do Not Call Registered' }
+    { name: 'phone_intelligence.reputation.level', type: 'number', description: 'Whitepages Pro Reputation Level' }
   ]
 
 
