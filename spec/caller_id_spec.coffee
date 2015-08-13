@@ -1,7 +1,6 @@
 assert = require('chai').assert
 fields = require('leadconduit-fields')
-integration = require('../src/callerid')
-time = require('timekeeper')
+integration = require('../src/caller_id')
 
 
 describe 'Caller ID Request', ->
