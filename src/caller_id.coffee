@@ -66,7 +66,8 @@ response = (vars, req, res) ->
 
         result.outcome = 'success'
         result.reason = null
-        result.billable = phone_obj.phone_number
+        result.billable = 1
+        result.phone_number = phone_obj.phone_number
         result.country_code = location_obj.country_code
         result.reputation_level = phone_obj.reputation.level
         result.is_connected = phone_obj.is_connected

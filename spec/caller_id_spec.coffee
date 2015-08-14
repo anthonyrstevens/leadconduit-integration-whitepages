@@ -176,8 +176,7 @@ describe 'Caller ID Response', ->
         billable: 1
         phone_number: '2064098427'
         country_code: 'US'
-        reputation:
-          level: 1
+        reputation_level: 1
         is_connected: true
         is_valid: true
         is_prepaid: null
@@ -345,8 +344,7 @@ describe 'Caller ID Response', ->
         billable: 1
         phone_number: '2069735100'
         country_code: 'US'
-        reputation:
-          level: 1
+        reputation_level: 1
         is_connected: true
         is_valid: true
         is_prepaid: false

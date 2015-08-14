@@ -274,8 +274,7 @@ describe 'Phone Response', ->
         billable: 1
         phone_number: '2064098427'
         country_code: 'US'
-        reputation:
-          level: 1
+        reputation_level: 1
         is_connected: true
         is_valid: true
         do_not_call: true
