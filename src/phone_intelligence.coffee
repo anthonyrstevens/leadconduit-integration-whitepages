@@ -9,7 +9,7 @@ baseUrl = 'https://proapi.whitepages.com/2.0/phone.json'
 
 request = (vars) ->
 
-  url: "#{baseUrl}?api_key=#{process.env.WHITEPAGES_API_KEY}&phone_number=#{vars.lead.phone_1}",
+  url: "#{baseUrl}?api_key=#{process.env.WHITEPAGES_PHONE_INTELLIGENCE_API_KEY}&phone_number=#{vars.lead.phone_1}",
   method: 'GET',
   headers:
     Accepts: 'application/json'
