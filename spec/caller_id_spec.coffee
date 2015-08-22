@@ -5,7 +5,7 @@ integration = require('../src/caller_id')
 describe 'Caller ID Request', ->
 
   beforeEach ->
-    process.env.WHITEPAGES_API_KEY = 'AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE'
+    process.env.WHITEPAGES_CALLER_ID_API_KEY = 'AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE'
     @vars = lead: { phone_1: '7732658399' }
     @request = integration.request(@vars)
 
